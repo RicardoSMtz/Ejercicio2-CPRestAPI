@@ -38,18 +38,22 @@ class ListaPersonajesFragment : Fragment() {
         dragonBallAPI = retrofit.create(DragonBallAPI::class.java)
         lifecycleScope.launch {
             try {
-                val personajes=dragonBallAPI.getCharacters()
-                Log.d("APPLOGS","Respuesta: $personajes")
+                //val personajes=dragonBallAPI.getCharacters()
+                //Log.d("APPLOGS","Respuesta: $personajes")
+                val personaje = dragonBallAPI.getCharacterDetail(1) // Goku
+                Log.d("API_TEST", "Nombre: ${personaje.name}")
+                Log.d("API_TEST", "Raza: ${personaje.race}")
+                Log.d("API_TEST", "MaxKI: ${personaje.maxKi}")
+                Log.d("API_TEST", "Descripcion: ${personaje.description}")
+                Log.d("API_TEST", "Genero: ${personaje.gender}")
+                Log.d("API_TEST", "Transformaciones: ${personaje.transformations?.joinToString { it.name ?: "Sin nombre" }}")
             }
             catch (e: Exception){
-
+                Log.e("API_TEST", "Error al obtener detalle del personaje", e)
             }
         }
+
     }
-
-
-
-    //Instacionado interfaz API
 
 
     override fun onDestroy() {

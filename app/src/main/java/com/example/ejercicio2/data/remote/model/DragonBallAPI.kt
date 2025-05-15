@@ -12,6 +12,6 @@ interface DragonBallAPI {
 
         @GET("api/characters/{id}")
         suspend fun getCharacterDetail(
-            @Path("id") id: String?
-        ): CharacterDragon
+            @Path("id") id: Int
+        ): DetailDragon
     }
