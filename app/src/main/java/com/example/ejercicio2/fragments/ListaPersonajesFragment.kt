@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ejercicio2.R
 import com.example.ejercicio2.data.remote.model.DragonBallAPI
 import com.example.ejercicio2.data.remote.model.util.Constants
 import com.example.ejercicio2.databinding.FragmentListaPersonajesBinding
@@ -37,25 +38,7 @@ class ListaPersonajesFragment : Fragment() {
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
         dragonBallAPI = retrofit.create(DragonBallAPI::class.java)
-        //lifecycleScope.launch {
-         //   try {
-                /*val personajes=dragonBallAPI.getCharacters()
-                Log.d("APPLOGS","Respuesta: $personajes")
-                val personaje = dragonBallAPI.getCharacterDetail(1) // Goku
-                Log.d("API_TEST", "Nombre: ${personaje.name}")
-                Log.d("API_TEST", "Raza: ${personaje.race}")
-                Log.d("API_TEST", "MaxKI: ${personaje.maxKi}")
-                Log.d("API_TEST", "Descripcion: ${personaje.description}")
-                Log.d("API_TEST", "Genero: ${personaje.gender}")
-                Log.d("API_TEST", "Transformaciones: ${personaje.transformations?.joinToString { it.name ?: "Sin nombre" }}")*/
-          //  }
-           // catch (e: Exception){
-                //Log.e("API_TEST", "Error al obtener detalle del personaje", e)
-          //  }
-        //}
-
     }
 
 
@@ -72,7 +55,16 @@ class ListaPersonajesFragment : Fragment() {
             val respuesta=dragonBallAPI.getCharacters()
             val personajes = respuesta.info
             binding.rv1.layoutManager = GridLayoutManager(requireContext(),2)
-            binding.rv1.adapter = FighterAdepter(personajes)
+            binding.rv1.adapter = FighterAdepter(personajes){ fighter ->
+                //Manejo del click en lista de personajes para cambiar de pantalla
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.ConteinerFragmentMain, DetallePersonajeFragment.newInstance(
+                        fighter.id.toString()
+                    ))
+                    .addToBackStack(null)
+                    .commit()
+
+            }
               }
              catch (e: Exception){
             Log.e("API_TEST", "Error al obtener detalle del personaje", e)
@@ -81,10 +73,5 @@ class ListaPersonajesFragment : Fragment() {
                 binding.pbLoading.visibility = View.INVISIBLE
             }
             }
-        //binding.btnPrueba.setOnClickListener{
-        //    requireActivity().supportFragmentManager.beginTransaction().replace(
-        //        R.id.ConteinerFragmentMain, DetallePersonajeFragment()
-        //    ).addToBackStack(null).commit()
-        //}
     }
 }

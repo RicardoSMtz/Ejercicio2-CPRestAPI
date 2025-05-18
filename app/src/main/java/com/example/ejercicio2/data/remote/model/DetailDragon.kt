@@ -30,5 +30,7 @@ data class Transformation(
     @SerializedName("name")
     val name: String?,
     @SerializedName("image")
-    val image: String?
+    val image: String?,
+    @SerializedName("ki")
+    val ki: String?
 )

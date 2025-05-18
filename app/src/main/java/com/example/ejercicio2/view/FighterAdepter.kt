@@ -8,7 +8,8 @@ import com.example.ejercicio2.data.remote.model.CharacterDragon
 import com.example.ejercicio2.databinding.FigtherElementBinding
 
 class FighterAdepter(
-    private val fighters: List<Character>
+    private val fighters: List<Character>,
+    private val onFigtherClick: (Character) -> Unit
 
 ): RecyclerView.Adapter<FigtherViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FigtherViewHolder {
@@ -21,5 +22,9 @@ class FighterAdepter(
     override fun onBindViewHolder(holder: FigtherViewHolder, position: Int){
         val fighter = fighters[position]
         holder.bind(fighter)
+        holder.itemView.setOnClickListener{
+            onFigtherClick(fighter)
+
+        }
     }
 }
