@@ -8,12 +8,12 @@ data class CharacterDragon(
     val info: List<Character>
 )
 data class Character(
-    @SerializedName("ide")
+    @SerializedName("id")
     val id: Int,
     @SerializedName("name")
     val name: String,
     @SerializedName("image")
     val image: String,
     @SerializedName("affiliation")
-    val affiliation: String,
+    val affiliation: String
 )

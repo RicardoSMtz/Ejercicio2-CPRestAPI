@@ -1,10 +1,11 @@
-package com.example.ejercicio2
+package com.example.ejercicio2.fragments
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.ejercicio2.R
 import com.example.ejercicio2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
