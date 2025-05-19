@@ -1,11 +1,11 @@
 # Proyecto-2-Computo-Movil
-# Android Dragon Ball Characters App #
+# Android Dragon Ball Characters App 
 This is a mobile application developed using the official IDE "Android Studio" for an academic project in the Mobile Computing course.
 
-##📱 What Is It?
+## 📱 What Is It?
 This app is a Dragon Ball character viewer that allows users to explore and learn more about characters from the Dragon Ball universe by consuming a public REST API. It retrieves a full list of characters and displays their details, including transformations, with images and stats.
 
-##✨ Features
+## ✨ Features
 List of 78 characters from the Dragon Ball API
 
 Each list item shows:
@@ -27,7 +27,7 @@ Detail view includes:
 - No hardcoded UI strings – all text is managed through Android resource files
 - Modern, responsive, and user-friendly interface
 
-#🔗 API Endpoints #
+## 🔗 API Endpoints 
 Character list (78 entries):
 https://dragonball-api.com/api/characters?limit=78
 
@@ -35,14 +35,14 @@ Character details by ID:
 https://dragonball-api.com/api/characters/{id}
 Example: https://dragonball-api.com/api/characters/1
 
-#🛠️ Technologies Used #
+## 🛠️ Technologies Used 
 - **Language:** Kotlin
 - **IDE:** Android Studio
 - **Networking:** Retrofit (REST API consumption)
 - **Image Loading:** Glide
 - **Minimum API level:** 26
 
-#🎯 Purpose #
+## 🎯 Purpose 
 The main objective of this project is to demonstrate the use of REST API consumption in Android, proper UI management with RecyclerView and dynamic layouts, as well as good practices such as error handling and clean interface design.
 
 ---
