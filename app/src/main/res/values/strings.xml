@@ -6,11 +6,11 @@
     <string name="max_ki">Ki Máximo: %1$s</string>
     <string name="gender">Género: %1$s</string>
     <string name="description">Descripción: %1$s</string>
-    <string name="race">Raza: %1$s</string>
     <string name="transformaciones">Transformaciones</string>
-
-
-
-
+    <string name="race">Raza: %1$s</string>
+    <string name="network">Error de red. Verifica tu conexión a internet</string>
+    <string name="server">Error del servidor. Intenta más tarde.</string>
+    <string name="unexpected">Ha ocurrido un error inesperado. Intenta nuevamente.</string>
+    <string name="reintentar">Reintentar</string>
 
 </resources>
