@@ -33,7 +33,6 @@ https://dragonball-api.com/api/characters?limit=78
 
 Character details by ID:
 https://dragonball-api.com/api/characters/{id}
-Example: https://dragonball-api.com/api/characters/1
 
 ## 🛠️ Technologies Used 
 - **Language:** Kotlin
