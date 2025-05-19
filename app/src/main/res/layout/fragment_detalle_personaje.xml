@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/backdetail"
     tools:context=".fragments.DetallePersonajeFragment">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,93 +20,120 @@
             android:padding="16dp"
             android:gravity="center_horizontal">
 
-            <!-- Imagen centrada -->
             <ImageView
                 android:id="@+id/ivImageDetail"
                 android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:layout_marginBottom="16dp"
-                tools:src="@mipmap/ic_launcher" />
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp" />
 
-            <!-- Datos -->
             <TextView
                 android:id="@+id/tvNameDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                tools:text="Nombre: Goku" />
+                android:fontFamily="@font/saiyansans"
+                android:textColor="@color/orangedbz"
+                android:textSize="35sp"
+                android:shadowColor="@color/white"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
 
             <TextView
                 android:id="@+id/tvKi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                tools:text="Ki: 9000" />
+                android:textSize="19sp"/>
 
             <TextView
                 android:id="@+id/tvMaxKi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                tools:text="Ki Máximo: 15000" />
+                android:textSize="19sp"/>
 
             <TextView
                 android:id="@+id/tvRace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                tools:text="Raza: Saiyajin" />
+                android:fontFamily="@font/oswald"
+                android:textStyle="bold"
+                android:textSize="19sp"/>
 
             <TextView
                 android:id="@+id/tvGender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                tools:text="Género: Masculino" />
+                android:fontFamily="@font/oswald"
+                android:textStyle="bold"
+                android:textSize="19sp"/>
 
             <TextView
                 android:id="@+id/tvAffiliationDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                tools:text="Afiliación: Guerreros Z" />
+                android:fontFamily="@font/oswald"
+                android:textStyle="bold"
+                android:textSize="19sp"/>
 
-            <!-- Descripción -->
-            <TextView
-                android:id="@+id/tvLongDesc"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="42sp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                tools:text="Descripción larga del personaje..." />
+                android:layout_margin="16dp">
 
-            <!-- Título Transformaciones -->
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/bgImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/detalle"
+                    app:riv_corner_radius="16dp"
+                    app:riv_oval="false" />
+
+                <TextView
+                    android:id="@+id/tvLongDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/oswald"
+                    android:background="@color/carbon"/>
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/trans"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Transformaciones"
+                android:text="@string/transformaciones"
+                android:fontFamily="@font/saiyansans"
                 android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:paddingBottom="8dp" />
+                android:gravity="center"
+                android:textSize="42sp"
+                android:paddingBottom="5dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
 
-            <!-- RecyclerView más compacto -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTransformaciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
-                android:layout_marginBottom="32dp" />
+                android:layout_marginBottom="12dp" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-    <!-- ProgressBar centrado -->
     <ProgressBar
         android:id="@+id/pbLoading"
         android:layout_width="50dp"

@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">DBZ Viewer</string>
-    <string name="app_naame">Ejercicio2</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unknow">desconocido</string>
+    <string name="ki">Ki Base: %1$s</string>
+    <string name="affiliation">Afiliación: %1$s</string>
+    <string name="max_ki">Ki Máximo: %1$s</string>
+    <string name="gender">Género: %1$s</string>
+    <string name="description">Descripción: %1$s</string>
+    <string name="race">Raza: %1$s</string>
+    <string name="transformaciones">Transformaciones</string>
+
+
+
 
 
 </resources>

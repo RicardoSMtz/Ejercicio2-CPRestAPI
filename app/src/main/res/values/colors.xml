@@ -4,5 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orangedbz">#F85B1A</color>
     <color name="babyblue">#143B78</color>
+    <color name="grey">#516381</color>
+    <color name="red">#D91E31</color>
+    <color name="carbon">#88000000</color>
+
+
 
 </resources>
