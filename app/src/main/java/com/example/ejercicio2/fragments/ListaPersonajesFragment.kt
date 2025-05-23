@@ -83,7 +83,6 @@ class ListaPersonajesFragment : Fragment() {
         instanciarRetrofit()
         cargarPersonajes()
 
-        // Botón de reintento
         binding.btnReintentar.setOnClickListener {
             cargarPersonajes()
         }
